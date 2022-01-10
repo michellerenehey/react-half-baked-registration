@@ -5,7 +5,7 @@ function App() {
   // add current user state
   return (
     <div className="App">
-      <p>i am the app component</p>
+      {/* <p>i am the app component</p> */}
       <BrowserRouter>
         <Switch>
           <Route exact path="/auth">
