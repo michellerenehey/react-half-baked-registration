@@ -9,13 +9,16 @@ export default function Auth({ setCurrentUser }) {
 
   //state for error message
   const [message, setMessage] = useState(null);
+
   // need type state
+  const [type, setType] = useState('signin');
 
   //need to create handleSubmit function for form
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await signUpUser(email, password);
+      const response =
+        type === 'signin' ? await signInUser(email, password) : await signUpUser(email, password);
       setCurrentUser(response);
     } catch {
       setMessage('Something went wrong, try again!');
