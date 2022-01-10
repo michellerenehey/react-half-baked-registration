@@ -1,35 +1,46 @@
 import { useState } from 'react';
 import AuthForm from '../components/AuthForm';
 import { signInUser, signUpUser } from '../services/users';
+import './Auth.css';
+import dynamicClassNames from 'classnames';
 
 export default function Auth({ setCurrentUser }) {
-  // set state for user interaction
+  // state for user interaction
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   //state for error message
   const [message, setMessage] = useState(null);
 
-  // need type state
+  // type state
   const [type, setType] = useState('signin');
 
-  //need to create handleSubmit function for form
+  // handleSubmit function for form
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response =
         type === 'signin' ? await signInUser(email, password) : await signUpUser(email, password);
       setCurrentUser(response);
-      console.log(response);
     } catch {
       setMessage('Something went wrong, try again!');
     }
   };
   return (
     <div>
-      <div>
-        <h1 onClick={() => setType('signin')}>Sign In</h1>
-        <h1 onClick={() => setType('signup')}>Sign Up</h1>
+      <div className="top">
+        <h1
+          onClick={() => setType('signin')}
+          className={dynamicClassNames({ active: type === 'signin' })}
+        >
+          Sign In
+        </h1>
+        <h1
+          onClick={() => setType('signup')}
+          className={dynamicClassNames({ active: type === 'signup' })}
+        >
+          Sign Up
+        </h1>
       </div>
       <AuthForm
         message={message}

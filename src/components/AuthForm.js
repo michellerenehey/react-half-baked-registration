@@ -1,4 +1,4 @@
-import React from 'react';
+import './AuthForm.css';
 
 export default function AuthForm({
   message,
@@ -11,8 +11,8 @@ export default function AuthForm({
   return (
     <div>
       {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="form-section">
           <label>Email:</label>
           <input
             type="email"
@@ -21,7 +21,7 @@ export default function AuthForm({
             placeholder="enter email"
           />
         </div>
-        <div>
+        <div className="form-section">
           <label>Password:</label>
           <input
             type="password"
@@ -30,7 +30,7 @@ export default function AuthForm({
             placeholder="enter password"
           />
         </div>
-        <input type="submit" />
+        <input type="submit" className="form-section submit-button" />
       </form>
     </div>
   );

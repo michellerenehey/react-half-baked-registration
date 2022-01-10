@@ -1,0 +1,13 @@
+.top {
+  display: flex;
+}
+
+.top h1 {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.top h1.active {
+  border-bottom: 2px solid black;
+  color: pink;
+}

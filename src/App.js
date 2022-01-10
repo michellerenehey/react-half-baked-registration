@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import { getUser, logout } from './services/users';
 import Auth from '../src/views/Auth';
+import './App.css';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -11,7 +12,6 @@ function App() {
   };
   return (
     <div className="App">
-      <p>i am the app component</p>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
