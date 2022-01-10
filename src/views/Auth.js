@@ -20,12 +20,17 @@ export default function Auth({ setCurrentUser }) {
       const response =
         type === 'signin' ? await signInUser(email, password) : await signUpUser(email, password);
       setCurrentUser(response);
+      console.log(response);
     } catch {
       setMessage('Something went wrong, try again!');
     }
   };
   return (
     <div>
+      <div>
+        <h1 onClick={() => setType('signin')}>Sign In</h1>
+        <h1 onClick={() => setType('signup')}>Sign Up</h1>
+      </div>
       <AuthForm
         message={message}
         email={email}
