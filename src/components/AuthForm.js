@@ -10,7 +10,7 @@ export default function AuthForm({
 }) {
   return (
     <div>
-      {message && message}
+      {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
