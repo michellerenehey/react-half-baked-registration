@@ -3,8 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(57, 160, 103);
+  height: 100vh;
 }
 
 .App > img {
   height: 300px;
+  padding: 10px;
 }
