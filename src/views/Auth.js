@@ -29,18 +29,18 @@ export default function Auth({ setCurrentUser }) {
   return (
     <div>
       <div className="top">
-        <h1
+        <h3
           onClick={() => setType('signin')}
           className={dynamicClassNames({ active: type === 'signin' })}
         >
           Sign In
-        </h1>
-        <h1
+        </h3>
+        <h3
           onClick={() => setType('signup')}
           className={dynamicClassNames({ active: type === 'signup' })}
         >
           Sign Up
-        </h1>
+        </h3>
       </div>
       <AuthForm
         message={message}

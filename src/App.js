@@ -12,6 +12,7 @@ function App() {
   };
   return (
     <div className="App">
+      <h1>Hello! Welcome!</h1>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
